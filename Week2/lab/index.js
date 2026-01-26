@@ -10,6 +10,9 @@ const usaFile = path.join(__dirname, 'usa.txt');
 [canadaFile, usaFile].forEach(file => {
     if (fs.existsSync(file)) {
         fs.unlinkSync(file);
+        console.log(`Deleted existing file: ${path.basename(file)}`);
+    } else {
+        console.log("no existing files found");
     }
 });
 
@@ -26,11 +29,15 @@ fs.readFile(inputFile, 'utf8', (err, data) => {
     const canadaData = lines.filter(line =>
         line.toLowerCase().includes('canada')
     );
+    console.log("Canada data");
+    console.log(canadaData);
 
     // Filter USA
     const usaData = lines.filter(line =>
         line.toLowerCase().includes('united states')
     );
+    console.log("USA data");
+    console.log(usaData);
 
     // Write to canada.txt
     fs.writeFileSync(canadaFile, canadaData.join('\n'));
