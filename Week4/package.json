@@ -1,0 +1,19 @@
+{
+  "name": "lab4_users_database",
+  "version": "1.0.0",
+  "description": "lab 4",
+  "keywords": [
+    "lab"
+  ],
+  "license": "ISC",
+  "author": "Avano Berlingieri",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "express": "^5.2.1",
+    "mongoose": "^9.2.1"
+  }
+}
